@@ -1,0 +1,6 @@
+I have created a web-based application to manage a user's expenses, called Expense Manager.
+The user is able to specify their earnings and categorize their expenses. 
+The website then accumulates the user's expenses and earnings by category,
+and displays it in an organized fashion on the homepage. 
+Another feature is for the user to view a colour coded record of their transaction history 
+and search for any individual transaction using the search bar.
