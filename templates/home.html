@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+          <div class="card-counter balance" id="balance">
+            <span class="count-name" id="balance-name">Current Balance:</span>
+            <span class="count-numbers" id="balance-numbers">${{balance}}</span>
+          </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+          <div class="card-counter food">
+            <i class="fas fa-utensils"></i>
+            <span class="count-numbers">${{food}}</span>
+            <span class="count-name">Food</span>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="card-counter trans">
+            <i class="fas fa-bus-alt"></i>
+            <span class="count-numbers">${{trans}}</span>
+            <span class="count-name">Transportation</span>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="card-counter house">
+            <i class="fas fa-home"></i>
+            <span class="count-numbers">${{house}}</span>
+            <span class="count-name">Housing</span>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="card-counter ut">
+            <i class="fas fa-shower"></i>
+            <span class="count-numbers">${{ut}}</span>
+            <span class="count-name">Utilities</span>
+          </div>
+        </div>
+      </div>
+    <div class="row">
+        <div class="col-lg-3">
+          <div class="card-counter insurance">
+            <i class="fas fa-coins"></i>
+            <span class="count-numbers">${{insurance}}</span>
+            <span class="count-name">Insurance</span>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="card-counter rec">
+            <i class="fas fa-plane"></i>
+            <span class="count-numbers">${{rec}}</span>
+            <span class="count-name">Recreation</span>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="card-counter invest">
+            <i class="fas fa-chart-line"></i>
+            <span class="count-numbers">${{invest}}</span>
+            <span class="count-name">Investment</span>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="card-counter mis">
+            <i class="fas fa-random"></i>
+            <span class="count-numbers">${{mis}}</span>
+            <span class="count-name">Miscellaneous</span>
+          </div>
+        </div>
+    </div>
+</div>
+
+<link href ="/static/home.css" rel="stylesheet"></href>
+{% endblock %}

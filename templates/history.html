@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  History
+{% endblock %}
+
+{% block main%}
+  <div class="form-group has-search">
+    <form action="/history" method="post">
+      <span class="fa fa-search form-control-feedback"></span>
+      <input type="text" name="search" class="form-control" placeholder="Search For a Type">
+    </form>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Amount</th>
+        <th scope="col">Type</th>
+        <th scope="col">Date</th>
+        <th scope="col">Note</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in range(length)%}
+        <tr class={{colours[i]}}>
+          <td>${{amounts[i]}}</td>
+          <td>{{types[i]}}</td>
+          <td>{{dates[i]}}</td>
+          <td>{{notes[i]}}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

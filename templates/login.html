@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block main %}
+    <form action="/login" method="post" name="form">
+        <div class="form-group">
+            <input class="form-control" type="text" name="username" placeholder="Username" onkeyup="checkform()">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password" onkeyup="checkform()">
+        </div>
+        <button class="btn btn-primary" type="submit" id="submitbutton" disabled>Log In</button>
+    </form>
+
+    <script>
+    function checkform()
+    {
+        var inputs = document.forms["form"].elements;
+        var cansubmit = true;
+
+        for (var i = 0; i < (inputs.length)-1; i++) {
+            if (inputs[i].value == "")
+            {
+                cansubmit = false;
+            }
+        }
+
+        if (cansubmit)
+        {
+            document.querySelector('#submitbutton').disabled = false;
+        }
+        else
+        {
+            document.querySelector('#submitbutton').disabled = true;
+        }
+    }
+    </script>
+{% endblock %}

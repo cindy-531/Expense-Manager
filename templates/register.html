@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post" name="theform">
+        <div class="form-group">
+            <input type="text" name="username" placeholder="Username" onkeyup="checkform()">
+        </div>
+        <div class="form-group">
+            <input type="password" name="password" placeholder="Password" onkeyup="checkform()">
+        </div>
+        <div class="form-group">
+            <input type="password" name="confirmation" placeholder="Confirm Password" onkeyup="checkform()">
+        </div>
+        <button class="btn btn-primary" type="submit" id="submitbutton" disabled>Register</button>
+    </form>
+
+    <script>
+    function checkform()
+    {
+        var inputs = document.forms["theform"].elements;
+        var cansubmit = true;
+
+        for (var i = 0; i < (inputs.length)-1; i++) {
+            if (inputs[i].value == "")
+            {
+                cansubmit = false;
+            }
+        }
+
+        if (cansubmit)
+        {
+            document.querySelector('#submitbutton').disabled = false;
+        }
+        else
+        {
+            document.querySelector('#submitbutton').disabled = true;
+        }
+    }
+    </script>
+{% endblock %}
